@@ -1,8 +1,6 @@
 import pytest
 import requests
 
-
-
 class TestHTTP:
     @pytest.mark.parametrize("post_id", [1, 2, 40, 22])
     def test_get_post(self, base_url, post_id):
