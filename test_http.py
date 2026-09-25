@@ -12,11 +12,8 @@ class TestHTTP:
     @pytest.mark.parametrize("userid", [1, 2, 3, 4])
     def test_create_post(self, base_url, userid):
         result = requests.post(base_url + "/posts", json={"title": "foo", "body": "bar", "userId": f"{userid}"})
-        print("Hello")
-        print(result)
-        print()
+        print(result.json())
         assert result.status_code == 201
-        print()
 
 
     def test_404(self, base_url):
@@ -24,4 +21,3 @@ class TestHTTP:
         number_post = f"/posts/{str(num)}"
         result = requests.get(base_url + number_post)
         assert result.status_code == 404
-
