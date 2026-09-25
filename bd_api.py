@@ -2,7 +2,7 @@ import sqlite3
 
 with sqlite3.connect(":memory:") as conn:
     cur = conn.cursor()
-    # CREATE
+    # CREATE - создание таблицы
     cur.execute("CREATE TABLE users (id INTEGER, name TEXT)")
     # INSERT — несколько строк через executemany
     cur.executemany(
